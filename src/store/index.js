@@ -1,6 +1,7 @@
 import create, { SetState, GetState } from 'zustand'
 import axios from 'axios'
 
+
 const store = create((set, get) => ({
     playerName: '',
     setPlayerName: (val) => set({ playerName: val }),
@@ -9,7 +10,7 @@ const store = create((set, get) => ({
     ADR: null,
     options: {
         headers: {
-            Authorization: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIwYzZjYzIxMC03ZWEzLTAxMzktY2QxNC0wYzVlYWFlYWUxZTEiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNjE4MzMxMjQyLCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6Im9ubHlmcmFncyJ9.SeBLviY633Xy1jYQ-oSkU5hs-pMODNDPoYxZuwLUWHA',
+            Authorization: process.env.REACT_APP_API_KEY,
             Accept: "application/vnd.api+json"
         }
     },
